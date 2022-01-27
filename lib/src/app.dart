@@ -9,7 +9,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Password Generatorr',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
+        backgroundColor: Colors.grey,
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.red, // background (button) color
+            onPrimary: Colors.white, // foreground (text) color
+          ),
+        ),
       ),
       home: MyHomePage(),
     );
