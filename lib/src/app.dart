@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'blocs/logic.dart';
 import './screens/password_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,19 +9,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Password Generatorr',
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-        backgroundColor: Colors.grey,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.red, // background (button) color
-            onPrimary: Colors.white, // foreground (text) color
+    return ChangeNotifierProvider(
+      create: (context) => LogicBloc(),
+      child: MaterialApp(
+        title: 'Password Generator',
+        theme: ThemeData(
+          primarySwatch: Colors.red,
+          backgroundColor: Colors.grey,
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              primary: Colors.red, // background (button) color
+              onPrimary: Colors.white, // foreground (text) color
+            ),
           ),
         ),
+        home: MyHomePage(),
       ),
-      home: MyHomePage(),
     );
   }
 }

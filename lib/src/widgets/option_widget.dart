@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../blocs/logic.dart';
 
 class OptionWidget extends StatefulWidget {
-  OptionWidget(this.optionText);
+  OptionWidget(this.optionText, this.optionType);
 
-  final optionText;
+  String optionText;
+  String optionType;
 
   @override
   State<OptionWidget> createState() => _OptionWidgetState();
@@ -12,15 +16,14 @@ class OptionWidget extends StatefulWidget {
 class _OptionWidgetState extends State<OptionWidget> {
   @override
   Widget build(BuildContext context) {
-    bool _isChecked = true;
-
+    final bloc = Provider.of<LogicBloc>(context);
     return Row(
       children: [
         Checkbox(
-          value: _isChecked,
+          value: bloc.getOption(widget.optionType),
           onChanged: (bool? value) {
             setState(() {
-              _isChecked = value!;
+              bloc.setOption(widget.optionType, value!);
             });
           },
         ),
