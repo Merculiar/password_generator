@@ -16,9 +16,9 @@ class _NumberPickerWidgetState extends State<NumberPickerWidget> {
   Widget build(BuildContext context) {
     final bloc = Provider.of<LogicBloc>(context);
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('Choose password length: '),
+        const Text('Choose password length: '),
         NumberPicker(
           axis: Axis.horizontal,
           itemWidth: 50,

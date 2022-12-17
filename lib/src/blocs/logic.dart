@@ -17,6 +17,7 @@ class LogicBloc extends ChangeNotifier {
   bool get isLower => _isLower;
   set setLower(bool val) => _isLower = val;
 
+  bool isError = false;
   bool _isNumber = false;
   bool get isNumber => _isNumber;
   set setNumber(bool val) => _isNumber = val;
@@ -59,6 +60,7 @@ class LogicBloc extends ChangeNotifier {
 
   void generatePassword() {
     String _finalSet = '';
+    isError = false;
     if (isUpper == true) {
       _finalSet += constants.UPPERCASE_CHARS;
     }
@@ -72,7 +74,8 @@ class LogicBloc extends ChangeNotifier {
       _finalSet += constants.SYMBOLS_CHARS;
     }
     if (_finalSet.isEmpty) {
-      _finalSet = 'Please choose at least one checkbox';
+      _finalSet = 'Please, choose at least one checkbox!';
+      isError = true;
       password = _finalSet;
       notifyListeners();
       return;

@@ -17,18 +17,21 @@ class _OptionWidgetState extends State<OptionWidget> {
   @override
   Widget build(BuildContext context) {
     final bloc = Provider.of<LogicBloc>(context);
-    return Row(
-      children: [
-        Checkbox(
-          value: bloc.getOption(widget.optionType),
-          onChanged: (bool? value) {
-            setState(() {
-              bloc.setOption(widget.optionType, value!);
-            });
-          },
-        ),
-        Text(widget.optionText),
-      ],
+    return SizedBox(
+      width: 180,
+      child: Row(
+        children: [
+          Checkbox(
+            value: bloc.getOption(widget.optionType),
+            onChanged: (bool? value) {
+              setState(() {
+                bloc.setOption(widget.optionType, value!);
+              });
+            },
+          ),
+          Text(widget.optionText),
+        ],
+      ),
     );
   }
 }

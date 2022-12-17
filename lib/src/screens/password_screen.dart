@@ -18,13 +18,20 @@ class MyHomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Container(
               height: 70,
               width: 250,
               color: Theme.of(context).backgroundColor,
               child: Center(
-                child: SelectableText(bloc.password),
+                child: SelectableText(
+                  bloc.password,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: bloc.isError ? Colors.red : Colors.black
+                  ),
+                ),
               ),
             ),
           ),
