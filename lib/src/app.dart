@@ -18,12 +18,12 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.grey,
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
-              primary: Colors.red, // background (button) color
-              onPrimary: Colors.white, // foreground (text) color
+              foregroundColor: Colors.white,
+              backgroundColor: Colors.red, // foreground (text) color
             ),
           ),
         ),
-        home: MyHomePage(),
+        home: const MyHomePage(),
       ),
     );
   }

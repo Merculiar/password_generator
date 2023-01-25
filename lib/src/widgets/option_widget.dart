@@ -4,10 +4,10 @@ import 'package:provider/provider.dart';
 import '../blocs/logic.dart';
 
 class OptionWidget extends StatefulWidget {
-  OptionWidget(this.optionText, this.optionType);
+  const OptionWidget(this.optionText, this.optionType, {super.key});
 
-  String optionText;
-  String optionType;
+  final String optionText;
+  final String optionType;
 
   @override
   State<OptionWidget> createState() => _OptionWidgetState();

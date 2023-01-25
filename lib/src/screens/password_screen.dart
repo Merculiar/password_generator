@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 import '../widgets/option_widget.dart';
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final bloc = Provider.of<LogicBloc>(context);
@@ -35,12 +37,12 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
             child: NumberPickerWidget(),
           ),
           Column(
-            children: [
+            children: const [
               OptionWidget('contains Uppercase', 'isUpper'),
               OptionWidget('contains lowercase', 'isLower'),
               OptionWidget('contains numbers', 'isNumber'),
@@ -48,15 +50,15 @@ class MyHomePage extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: ElevatedButton(
-              child: Text('generate'),
+              child: const Text('generate'),
               onPressed: () => bloc.generatePassword(),
               style: ElevatedButton.styleFrom(
-                  primary: Colors.red,
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                  backgroundColor: Colors.red,
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
                   textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                      const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
             ),
           ),
         ],
