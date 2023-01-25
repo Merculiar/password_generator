@@ -5,7 +5,7 @@ import 'package:numberpicker/numberpicker.dart';
 import '../blocs/logic.dart';
 
 class NumberPickerWidget extends StatefulWidget {
-  NumberPickerWidget();
+  const NumberPickerWidget({super.key});
 
   @override
   State<NumberPickerWidget> createState() => _NumberPickerWidgetState();

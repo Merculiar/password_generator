@@ -62,16 +62,16 @@ class LogicBloc extends ChangeNotifier {
     String _finalSet = '';
     isError = false;
     if (isUpper == true) {
-      _finalSet += constants.UPPERCASE_CHARS;
+      _finalSet += constants.uppercaseChars;
     }
     if (isLower == true) {
-      _finalSet += constants.LOWERCASE_CHARS;
+      _finalSet += constants.lowercaseChars;
     }
     if (isNumber == true) {
-      _finalSet += constants.NUMBERS_CHARS;
+      _finalSet += constants.numbersChars;
     }
     if (isSymbol == true) {
-      _finalSet += constants.SYMBOLS_CHARS;
+      _finalSet += constants.symbolsChars;
     }
     if (_finalSet.isEmpty) {
       _finalSet = 'Please, choose at least one checkbox!';
