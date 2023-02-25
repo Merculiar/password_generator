@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../blocs/logic.dart';
+import '../blocs/password_bloc.dart';
 
 class OptionWidget extends StatefulWidget {
   const OptionWidget(this.optionText, this.optionType, {super.key});
@@ -16,7 +16,7 @@ class OptionWidget extends StatefulWidget {
 class _OptionWidgetState extends State<OptionWidget> {
   @override
   Widget build(BuildContext context) {
-    final bloc = Provider.of<LogicBloc>(context);
+    final bloc = Provider.of<PasswordBloc>(context);
     return SizedBox(
       width: 180,
       child: Row(
