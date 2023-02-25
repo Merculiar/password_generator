@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+1
+version: 2.0.0+1
 
 environment:
   sdk: ">=2.18.0 <3.0.0"
@@ -14,14 +14,35 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.0.2
   numberpicker: ^2.1.1
+  simple_animations: ^5.0.0+3
+  shared_preferences: 2.0.15
+  flutter_launcher_icons: "^0.11.0"
+
+flutter_icons:
+  image_path: "assets/images/launch_icon_android.png"
+  android: true
+  ios: false
+  min_sdk_android: 21
+  web:
+    generate: false
+    image_path: "assets/images/icon-1024x1024.png"
+  windows:
+    generate: false
+    image_path: "assets/images/icon-1024x1024.png"
+    icon_size: 48
+  macos:
+    generate: false
+    image_path: "assets/images/icon-1024x1024.png"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^1.0.0
-  flutter_launcher_icons: "^0.11.0"
+
+
 
 
 flutter:
   uses-material-design: true
-
+  assets:
+    - assets/images/launch_icon_android.png

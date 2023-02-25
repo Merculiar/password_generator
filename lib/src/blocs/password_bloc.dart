@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 
-import '../common/constants.dart' as constants;
+import '../common/constants.dart';
 
-class LogicBloc extends ChangeNotifier {
+class PasswordBloc extends ChangeNotifier {
   String password = '';
 
   int number = 8;
@@ -25,6 +25,27 @@ class LogicBloc extends ChangeNotifier {
   bool _isSymbol = false;
   bool get isSymbol => _isSymbol;
   set setSymbol(bool val) => _isSymbol = val;
+
+  void refreshValues() {
+    password = '';
+    number = 8;
+    _isUpper = false;
+    _isLower = false;
+    _isNumber = false;
+    isError = false;
+    _isSymbol = false;
+    notifyListeners();
+  }
+
+  void clearValues() {
+    password = '';
+    number = 8;
+    _isUpper = false;
+    _isLower = false;
+    _isNumber = false;
+    isError = false;
+    _isSymbol = false;
+  }
 
   bool setOption(String text, bool val) {
     if (text == 'isUpper') {
@@ -61,17 +82,17 @@ class LogicBloc extends ChangeNotifier {
   void generatePassword() {
     String _finalSet = '';
     isError = false;
-    if (isUpper == true) {
-      _finalSet += constants.uppercaseChars;
+    if (isUpper) {
+      _finalSet += Constants.uppercaseChars;
     }
-    if (isLower == true) {
-      _finalSet += constants.lowercaseChars;
+    if (isLower) {
+      _finalSet += Constants.lowercaseChars;
     }
-    if (isNumber == true) {
-      _finalSet += constants.numbersChars;
+    if (isNumber) {
+      _finalSet += Constants.numbersChars;
     }
-    if (isSymbol == true) {
-      _finalSet += constants.symbolsChars;
+    if (isSymbol) {
+      _finalSet += Constants.symbolsChars;
     }
     if (_finalSet.isEmpty) {
       _finalSet = 'Please, choose at least one checkbox!';
